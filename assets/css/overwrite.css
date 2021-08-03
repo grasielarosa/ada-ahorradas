@@ -1,0 +1,27 @@
+h1{
+    font-size: 4rem;
+    color: #FFF;
+    margin: 0px;
+   
+}
+h5{
+    color: #FFF;
+}
+.finance-theme{
+    background-color: #010B40;
+    
+}
+
+a.navbar-brand{
+    padding: 0px;
+    
+}
+.fas{
+    font-size: 1.5rem;
+    color: #F5B44B;
+}
+.fa-hand-holding-usd{
+    font-size: 5rem;
+    margin: 10px;
+}
+
