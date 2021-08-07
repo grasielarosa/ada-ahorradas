@@ -7,15 +7,31 @@ h1{
 h5{
     color: #FFF;
 }
-.finance-theme{
-    background-color: #010B40;
-    
+body{
+    height: 100vh;
+}
+main.container-fluid{
+    background-color: #FAD79E;
 }
 
-a.navbar-brand{
-    padding: 0px;
-    
+footer.container-fluid{
+    background-color: #FAD79E;
 }
+
+.btn {
+    background-color: #3F3D56;
+    border: #3F3D56;
+}
+.btn:hover{
+    background-color: #010b40;
+    border: #3F3D56;
+}
+.btn:active{
+    background-color: #3F3D56;
+    border: #3F3D56;
+}
+
+
 .fas{
     font-size: 1.5rem;
     color: #F5B44B;
@@ -23,5 +39,8 @@ a.navbar-brand{
 .fa-hand-holding-usd{
     font-size: 5rem;
     margin: 10px;
+}
+.finance-theme{
+    background-color: #3F3D56;
 }
 
