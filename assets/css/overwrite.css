@@ -10,17 +10,28 @@ h5{
 body{
     height: 100vh;
 }
-main.container-fluid{
-    background-color: #FAD79E;
+.bg-primary {
+    background-color: #3F3D56 !important; 
 }
 
-footer.container-fluid{
-    background-color: #FAD79E;
+.bg-secondary {
+    background-color: #f0ebeb !important; 
 }
 
-.btn {
+.text-primary,
+h2,
+body {
+    color: #3F3D56 !important; 
+}
+
+.text-secondary {
+    color: #f0ebeb !important; 
+}
+/* #FAD79E  */
+.btn.btn-primary {
     background-color: #3F3D56;
     border: #3F3D56;
+    color: #f0ebeb !important
 }
 .btn:hover{
     background-color: #010b40;
@@ -31,6 +42,11 @@ footer.container-fluid{
     border: #3F3D56;
 }
 
+.img-balance {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
 
 .fas{
     font-size: 1.5rem;
@@ -40,7 +56,3 @@ footer.container-fluid{
     font-size: 5rem;
     margin: 10px;
 }
-.finance-theme{
-    background-color: #3F3D56;
-}
-
