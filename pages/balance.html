@@ -15,7 +15,7 @@
          ***************************    
     -->
 <header>
-    <nav class="navbar navbar-expand-lg navbar-light finance-theme">
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
         <div class="container">
             <div class="d-flex justify-content-end align-items-baseline">
                 <i class="fas fa-hand-holding-usd me-4"></i>
@@ -51,85 +51,78 @@
         </div>
       </nav>
 </header>
-<main class="container-fluid pt-5">
-    <div class="row justify-content-evenly">
-        <div class="col-4 ps-5">
-            <div class="row">
-                <section>
-                    <div class="card border-2">
-                        <div class="card-title pt-5 ps-5">
-                            <h2>Balance</h2>
+<section class="my-4">
+    <div class="container m-auto">
+        <div class="row row-cols-1 row-cols-md-2 d-flex justify-content-around m-auto">
+            <div class="col-12 col-md-4">
+                <div class="row row-cols-1 g-2">
+                    <!-- start balance col -->
+                    <div class="col bg-secondary rounded p-3">
+                        <h2>Balance</h2>
+                        <div class="row px-1 d-flex justify-content-between">
+                            <div class="col"><span>Ganancias</span></div>
+                            <div class="col text-start text-md-end"><span>$ 0</span></div>
                         </div>
-                        <div class="card-body">
-                            <div class="">
-                                <p>Ganancias</p>
-                                <p>+$0</p>
-                            </div>
-                            <div class="">
-                                <p>Gastos</p>
-                                <p>-$0</p>
-                            </div>
+                        <div class="row px-1 d-flex justify-content-between">
+                            <div class="col"><span>Gastos</span></div>
+                            <div class="col text-start text-md-end"><span>$ 0</span></div>
                         </div>
-                        <div class="card-body">
-                            <p>Total</p>
-                            <p>$0</p>
+                        <div class="row px-1 d-flex justify-content-between">
+                            <div class="col"><span class="fw-bold">Total</span></div>
+                            <div class="col text-start text-md-end"><span class="fw-bold">$ 0</span></div>
                         </div>
                     </div>
-                </section>
-            </div>
-            <br>
-            <div class="row">
-                <section>
-                    <div class="card border-2">
-                        <h2>Filtros</h2>
-                        <div class="">
-                            <p>Ganancias</p>
-                            <p>+$0</p>
+                    <!-- start filter col -->
+                    <div class="col bg-secondary rounded p-md-3 mb-2 mb-md-0">
+                        <div class="row px-1 d-flex justify-content-between">
+                            <div class="col"><h2>Filter</h2></div>
+                            <div class="col text-start text-md-end"><a href="a">Ocultar Filtros</a></div>
                         </div>
-                        <div class="">
-                            <p>Gastos</p>
-                            <p>-$0</p>
+                        <div class="row d-flex justify-content-between px-4 mb-2">
+                            <label for="type">Tipo</label>
+                            <select name="" id=""></select>
                         </div>
-                        <div class="">
-                            <p>Total</p>
-                            <p>$0</p>
+                        <div class="row d-flex justify-content-between px-4 mb-2">
+                            <label for="type">Categoría</label>
+                            <select name="" id=""></select>
                         </div>
-                    </div>
-                </section>
-            </div>
-            
-        </div>
-        <div class="col-7 pe-5">
-            <section>
-                <div class="card border-2">
-                    <div class="card-body m-3">
-                        <div class="d-flex flex-row justify-content-between">
-                            <h2>Operaciones</h2>
-                        <a href="#" class="btn btn-primary">+ Nueva Operación</a>
+                        <div class="row d-flex justify-content-between px-4 mb-2">
+                            <label for="type">Fecha</label>
+                            <input type="date">
                         </div>
-                        <div class="m-3">
-                            <img src="./assets/img/undraw_Projections_re_1mrh.svg" alt="">
-                        </div>
-                        <div class="m-3">
-                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        <div class="row d-flex justify-content-between px-4 mb-2">
+                            <label for="type">Ordenar por</label>
+                            <select name="" id=""></select>
                         </div>
                         
                     </div>
+                    
                 </div>
-                
-            </section>
+            </div>
+            <!-- start operation col -->
+            <div class="col-12 col-md-8 bg-secondary rounded p-3">
+                <div class="row d-flex justify-content-between mb-3">
+                    <div class="col">
+                        <h2>Operaciones</h2>
+                    </div>
+                    <div class="col text-end">
+                        <a href="">
+                            <button class="btn btn-primary">Nueva Operación</button>
+                        </a>
+                        
+                    </div>
+                </div>
+                <div class="text-center my-3">
+                    <img src="../assets/img/undraw_Projections_re_1mrh.svg" width="80%" alt="imagen balance" class="img-fluid">
+                </div>
+                <div class="my-3">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim qui nostrum nesciunt.</p>
+                </div>
+            </div>
         </div>
-        
     </div>
-    <br><br>    
-</main>
-<footer class="container-fluid">
-    <div class="row">
-       <div class="col">
-            <p>Deveoped by Grasiela Rosa</p>
-       </div>
-    </div>
-</footer>
+</section>
     <script src="../assets/js/bootstrap.min.js"></script>
+    
 </body>
 </html>
