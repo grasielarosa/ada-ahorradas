@@ -62,57 +62,57 @@
             <div class="row justify-content-center">
                 <div class="col-8">
                     <h1 style="color: black;">Nueva Operación</h1>
-                    <div class="row">
-                        <div class="col row-cols-1">
-                            <label for="transaction-name">Descripción</label>
-                            <input type="text" id="inputTransaction" name="transaction-name">
+                    <form action="" id="formTransaction">
+                        <div class="row">
+                            <div class="col row-cols-1"> 
+                                <label for="transaction-name">Descripción</label>
+                                <input type="text" id="inputTransaction" name="transaction-name">
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col row-cols-1">
-                            <label for="monto">Monto</label>
-                            <input type="text" id="inputMonto" name="monto" placeholder="0">
+                        <div class="row">
+                            <div class="col row-cols-1">
+                                <label for="amount">Monto</label>
+                                <input type="text" id="inputAmount" name="amount" placeholder="0">
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col row-cols-1">
-                            <label for="type">Tipo</label>
-                            <select name="type" id="typeSelect">
-                                <option value="debt">Gasto</option>
-                                <option value="credit">Ganancia</option>
-                            </select>
+                        <div class="row">
+                            <div class="col row-cols-1">
+                                <label for="type">Tipo</label>
+                                <select name="type" id="typeSelect">
+                                    <option value="debt">Gasto</option>
+                                    <option value="credit">Ganancia</option>
+                                </select>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col row-cols-1">
-                            <label for="category">Categoría</label>
-                        <select name="category" id="categorySelect"></select>
+                        <div class="row">
+                            <div class="col row-cols-1">
+                                <label for="category">Categoría</label>
+                            <select name="category" id="categorySelect"></select>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col row-cols-1">
-                            <label for="date">Fecha</label>
-                            <input type="date">
+                        <div class="row">
+                            <div class="col row-cols-1">
+                                <label for="date">Fecha</label>
+                                <input type="date" id="transactionDate">
+                            </div>
                         </div>
-                    </div>
-                    <div class="row justify-content-end">
-                        <div class="col-5 g-4">
-                            <button type="submit" id="btnCancelNewTransaction">Cancelar</button>
-                            <button type="submit" id="btnAddTransaction">Agregar</button>
+                        <div class="row justify-content-end">
+                            <div class="col-5 g-4">
+                                <button type="submit" id="btnCancelNewTransaction">Cancelar</button>
+                                <button type="submit" id="btnAddTransaction">Agregar</button>
+                            </div>
                         </div>
-                    </div>
-                    
-
-                    
-
-
-                    
+                        <div>
+                            <ul id="transactions"></ul>
+                        </div>
+                    </form>              
                 </div>
 
             </div>
         </div>
     </main>
-    <script src="../assets/js/jsteste.js"></script>
+    <script src="../assets/js/new-transaction.js"></script>
+    <!-- <script src="../assets/js/jsteste.js"></script> -->
     <script src="../assets/js/bootstrap.min.js"></script>
 </body>
 </html>
