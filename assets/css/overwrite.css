@@ -18,6 +18,10 @@ body{
     background-color: #f0ebeb !important; 
 }
 
+.bg-success {
+    background-color: #fad79e63  !important;
+}
+
 .text-primary,
 h2,
 body {
@@ -27,17 +31,18 @@ body {
 .text-secondary {
     color: #f0ebeb !important; 
 }
-/* #FAD79E  */
+
+
 .btn.btn-primary {
     background-color: #3F3D56;
     border: #3F3D56;
     color: #f0ebeb !important
 }
-.btn:hover{
+.btn.btn-primary:hover{
     background-color: #010b40;
     border: #3F3D56;
 }
-.btn:active{
+.btn.btn-primary:active{
     background-color: #3F3D56;
     border: #3F3D56;
 }

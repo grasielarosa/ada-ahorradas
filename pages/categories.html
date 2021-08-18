@@ -16,7 +16,7 @@
         ***************************    
     -->
 <header>
-    <nav class="navbar navbar-expand-lg navbar-light finance-theme">
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
         <div class="container">
             <div class="d-flex justify-content-end align-items-baseline">
                 <i class="fas fa-hand-holding-usd me-4"></i>
@@ -57,21 +57,34 @@
             Main - Categories
         ***************************    
     -->
-    <main>
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-8">
-                    <h1 style="color: black;">Categorías</h1>
-                    <label for="category-name">Nombre</label>
-                    <input type="text" id="inputNameID" name="category-name">
-                    <button type="submit" id="btnNewCategory">Agregar</button>
-                    <ul id="categoriesId"></ul>
-                </div>
 
+    <section class="my-5">
+        <div class="container m-auto p-5">
+            <div class="row bg-secondary rounded p-3 d-flex justify-content-around m-auto">
+                <h1 class="text-primary h2 mb-5">Categorías</h1>
+                
+                    <label class="col-form-label ms-4 ps-3 fw-bold" for="category-name">Nombre</label>
+              
+                <div class="row justify-content-between">
+                    <div class="col-12 col-md-8 col-lg-10">
+                        <input class="form-control" type="text" id="inputNameID" name="category-name" placeholder="digite aquí">
+                    </div>
+                    <div class="col-12 col-md-4 col-lg-2">
+                        <button class="btn btn-primary mt-4 mt-md-0 px-4" type="submit" id="btnNewCategory">Agregar</button>
+                    </div>
+                </div>
+                <div class="row mt-5 ">
+                    <div class="col">
+                        <ul class="list-unstyled px-3 "
+                        id="categoriesId">
+                        </ul>
+                    </div>
+                </div>
             </div>
+
         </div>
-    </main>
-    <script src="../assets/js/jsteste.js"></script>
+    </section>
+    <script src="../assets/js/new-category.js"></script>
     <script src="../assets/js/bootstrap.min.js"></script>
 </body>
 </html>
