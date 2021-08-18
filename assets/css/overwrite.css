@@ -1,14 +1,11 @@
-h1{
-    font-size: 4rem;
-    color: #FFF;
-    margin: 0px;
-   
-}
-h5{
-    color: #FFF;
-}
+
 body{
     height: 100vh;
+}
+
+.h1 {
+    margin: 0%;
+    font-size: 3rem;
 }
 .bg-primary {
     background-color: #3F3D56 !important; 
@@ -54,10 +51,11 @@ body {
 }
 
 .fas{
-    font-size: 1.5rem;
+    font-size: 1rem;
     color: #F5B44B;
 }
 .fa-hand-holding-usd{
-    font-size: 5rem;
+    font-size: 4rem;
     margin: 10px;
+    
 }

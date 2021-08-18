@@ -1,128 +1,169 @@
 <!DOCTYPE html>
 <html lang="es-AR">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/956736f2ee.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../assets/css/overwrite.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/956736f2ee.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../assets/css/overwrite.css" />
     <title>ahorrADAs | Grasiela Rosa</title>
-</head>
-<body>
+  </head>
+  <body>
     <!-- *************************** 
             navbar
          ***************************    
     -->
-<header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container">
-            <div class="d-flex justify-content-end align-items-baseline">
-                <i class="fas fa-hand-holding-usd me-4"></i>
-                <a class="navbar-brand m" href="#"><h1>AhorrAdas</h1></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-                </button>
-            </div>
-          <div class="collapse d-flex justify-content-end " id="navbarSupportedContent">
-            <ul class="navbar-nav mb-2 mb-lg-0">
+          <div class="d-flex align-items-end">
+            <i class="fas fa-hand-holding-usd me-4 mb-3"></i>
+            <a class="navbar-brand" href="#"><h1 class="h1">AhorrAdas</h1></a>
+          </div>
+          <button
+            class="navbar-toggler align-self-end mb-3"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="
+              collapse
+              navbar-collapse
+              d-lg-flex
+              justify-content-lg-end
+              align-self-lg-end
+            "
+            id="navbarSupportedContent"
+          >
+            <ul class="navbar-nav mr-auto">
               <li class="nav-item">
-                    <a class="nav-link active d-flex flex-row justify-content-between" aria-current="page" href="#">
-                        <i class="fas fa-chart-line me-2"></i>
-                        <h5>Balance</h5>
-                    </a>
+                <a
+                  class="nav-link d-flex justify-content-end"
+                  href="../pages/balance.html"
+                >
+                  <i class="fas fa-chart-line me-2"></i>
+                  <h5 class="fw-light text-secondary h6">Balance</h5></a
+                >
               </li>
               <li class="nav-item">
-                <a class="nav-link d-flex flex-row justify-content-between" href="#">
-                     <i class="fas fa-tag me-2" ></i>
-                    <h5>Categorías</h5>
+                <a
+                  class="nav-link d-flex justify-content-end"
+                  href="../pages/categories.html"
+                >
+                  <i class="fas fa-tag me-2"></i>
+                  <h5 class="fw-light text-secondary h6">Categorías</h5>
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link d-flex flex-row justify-content-between" href="#">
-                    <i class="fas fa-chart-pie me-2"></i>
-                    <h5>Reportes</h5>
+                <a
+                  class="nav-link d-flex justify-content-end"
+                  href="../pages/report.html"
+                >
+                  <i class="fas fa-chart-pie me-2"></i>
+                  <h5 class="fw-light text-secondary h6">Reportes</h5>
                 </a>
-              </li>
-                </ul>
               </li>
             </ul>
           </div>
         </div>
       </nav>
-</header>
-<section class="my-4">
-    <div class="container m-auto">
-        <div class="row row-cols-1 row-cols-md-2 d-flex justify-content-around m-auto">
-            <div class="col-12 col-md-4">
-                <div class="row row-cols-1 g-2">
-                    <!-- start balance col -->
-                    <div class="col bg-secondary rounded p-3">
-                        <h2>Balance</h2>
-                        <div class="row px-1 d-flex justify-content-between">
-                            <div class="col"><span>Ganancias</span></div>
-                            <div class="col text-start text-md-end"><span>$ 0</span></div>
-                        </div>
-                        <div class="row px-1 d-flex justify-content-between">
-                            <div class="col"><span>Gastos</span></div>
-                            <div class="col text-start text-md-end"><span>$ 0</span></div>
-                        </div>
-                        <div class="row px-1 d-flex justify-content-between">
-                            <div class="col"><span class="fw-bold">Total</span></div>
-                            <div class="col text-start text-md-end"><span class="fw-bold">$ 0</span></div>
-                        </div>
-                    </div>
-                    <!-- start filter col -->
-                    <div class="col bg-secondary rounded p-md-3 mb-2 mb-md-0">
-                        <div class="row px-1 d-flex justify-content-between">
-                            <div class="col"><h2>Filter</h2></div>
-                            <div class="col text-start text-md-end"><a href="a">Ocultar Filtros</a></div>
-                        </div>
-                        <div class="row d-flex justify-content-between px-4 mb-2">
-                            <label for="type">Tipo</label>
-                            <select name="" id=""></select>
-                        </div>
-                        <div class="row d-flex justify-content-between px-4 mb-2">
-                            <label for="type">Categoría</label>
-                            <select name="" id=""></select>
-                        </div>
-                        <div class="row d-flex justify-content-between px-4 mb-2">
-                            <label for="type">Fecha</label>
-                            <input type="date">
-                        </div>
-                        <div class="row d-flex justify-content-between px-4 mb-2">
-                            <label for="type">Ordenar por</label>
-                            <select name="" id=""></select>
-                        </div>
-                        
-                    </div>
-                    
+    </header>
+    <section class="my-4">
+      <div class="container m-auto">
+        <div
+          class="
+            row row-cols-1 row-cols-md-2
+            d-flex
+            justify-content-around
+            m-auto
+          "
+        >
+          <div class="col-12 col-md-4">
+            <div class="row row-cols-1 g-2">
+              <!-- start balance col -->
+              <div class="col bg-secondary rounded p-3">
+                <h2>Balance</h2>
+                <div class="row px-1 d-flex justify-content-between">
+                  <div class="col"><span>Ganancias</span></div>
+                  <div class="col text-start text-md-end"><span>$ 0</span></div>
                 </div>
+                <div class="row px-1 d-flex justify-content-between">
+                  <div class="col"><span>Gastos</span></div>
+                  <div class="col text-start text-md-end"><span>$ 0</span></div>
+                </div>
+                <div class="row px-1 d-flex justify-content-between">
+                  <div class="col"><span class="fw-bold">Total</span></div>
+                  <div class="col text-start text-md-end">
+                    <span class="fw-bold">$ 0</span>
+                  </div>
+                </div>
+              </div>
+              <!-- start filter col -->
+              <div class="col bg-secondary rounded p-md-3 mb-2 mb-md-0">
+                <div class="row px-1 d-flex justify-content-between">
+                  <div class="col"><h2>Filter</h2></div>
+                  <div class="col text-start text-md-end">
+                    <a href="a">Ocultar Filtros</a>
+                  </div>
+                </div>
+                <div class="row d-flex justify-content-between px-4 mb-2">
+                  <label for="type">Tipo</label>
+                  <select name="" id=""></select>
+                </div>
+                <div class="row d-flex justify-content-between px-4 mb-2">
+                  <label for="type">Categoría</label>
+                  <select name="" id=""></select>
+                </div>
+                <div class="row d-flex justify-content-between px-4 mb-2">
+                  <label for="type">Fecha</label>
+                  <input type="date" />
+                </div>
+                <div class="row d-flex justify-content-between px-4 mb-2">
+                  <label for="type">Ordenar por</label>
+                  <select name="" id=""></select>
+                </div>
+              </div>
             </div>
-            <!-- start operation col -->
-            <div class="col-12 col-md-8 bg-secondary rounded p-3">
-                <div class="row d-flex justify-content-between mb-3">
-                    <div class="col">
-                        <h2>Operaciones</h2>
-                    </div>
-                    <div class="col text-end">
-                        <a href="">
-                            <button class="btn btn-primary">Nueva Operación</button>
-                        </a>
-                        
-                    </div>
-                </div>
-                <div class="text-center my-3">
-                    <img src="../assets/img/undraw_Projections_re_1mrh.svg" width="80%" alt="imagen balance" class="img-fluid">
-                </div>
-                <div class="my-3">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim qui nostrum nesciunt.</p>
-                </div>
+          </div>
+          <!-- start operation col -->
+          <div class="col-12 col-md-8 bg-secondary rounded p-3">
+            <div class="row d-flex justify-content-between mb-3">
+              <div class="col">
+                <h2>Operaciones</h2>
+              </div>
+              <div class="col text-end">
+                <a href="../pages/transaction.html">
+                  <button class="btn btn-primary">Nueva Operación</button>
+                </a>
+              </div>
             </div>
+            <div class="text-center my-3">
+              <img
+                src="../assets/img/undraw_Projections_re_1mrh.svg"
+                width="80%"
+                alt="imagen balance"
+                class="img-fluid"
+              />
+            </div>
+            <div class="my-3">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim
+                qui nostrum nesciunt.
+              </p>
+            </div>
+          </div>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
     <script src="../assets/js/bootstrap.min.js"></script>
-    
-</body>
+  </body>
 </html>
