@@ -21,7 +21,8 @@ body{
 
 .text-primary,
 h2,
-body {
+body,
+input {
     color: #3F3D56 !important; 
 }
 
@@ -29,7 +30,9 @@ body {
     color: #f0ebeb !important; 
 }
 
-
+.btn {
+    height: 40px;
+}
 .btn.btn-primary {
     background-color: #3F3D56;
     border: #3F3D56;
