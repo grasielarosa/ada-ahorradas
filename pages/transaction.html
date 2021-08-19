@@ -83,70 +83,92 @@
             Main - transactions
         ***************************    
     -->
-    <main>
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-8">
-            <h1 style="color: black">Nueva Operación</h1>
-            <form action="" id="formTransaction">
-              <div class="row">
-                <div class="col row-cols-1">
-                  <label for="transaction-name">Descripción</label>
-                  <input
-                    type="text"
-                    id="inputTransaction"
-                    name="transaction-name"
-                  />
-                </div>
+    <section class="my-3">
+      <div class="container m-auto p-5">
+        <div
+          class="
+            row
+            bg-secondary
+            rounded
+            p-3
+            d-flex
+            justify-content-around
+            m-auto
+          "
+        >
+          <h1 class="text-primary h2 mb-5">Nueva Operación</h1>
+
+          <form id="formTransaction">
+            <div class="form-floating mb-3 col-12">
+              <input
+                id="inputTransaction"
+                name="transaction-name"
+                type="text"
+                class="form-control"
+                placeholder="Descripción"
+              />
+              <label class="ps-3 form-label" for="transaction-name"
+                >Descripción</label
+              >
+            </div>
+            <div class="form-floating mb-3 col-12">
+              <input
+                id="inputAmount"
+                class="form-control"
+                type="text"
+                name="amount"
+                placeholder="0"
+              />
+              <label class="ps-3 form-label" for="amount">Monto</label>
+            </div>
+
+            <div class="form-floating mb-3 col-12">
+              <select class="form-select" name="type" id="typeSelect">
+                <option value="debt">Gasto</option>
+                <option value="credit">Ganancia</option>
+              </select>
+              <label class="ps-3 form-label" for="type">Tipo</label>
+            </div>
+
+            <div class="form-floating mb-3 col-12">
+              <select
+                class="form-select"
+                name="category"
+                id="categorySelect"
+              ></select>
+              <label class="form-label" for="category">Categoría</label>
+            </div>
+
+            <div class="form-floating mb-3">
+              <input class="form-control" type="date" id="transactionDate" />
+              <label class="form-label" for="date">Fecha</label>
+            </div>
+
+            <div class="row">
+              <div class="offset-0 mt-3">
+                <button
+                  class="btn btn-secondary"
+                  type="submit"
+                  id="btnCancelNewTransaction"
+                >
+                  Cancelar
+                </button>
+                <button
+                  class="btn btn-primary"
+                  type="submit"
+                  id="btnAddTransaction"
+                >
+                  Agregar
+                </button>
               </div>
-              <div class="row">
-                <div class="col row-cols-1">
-                  <label for="amount">Monto</label>
-                  <input
-                    type="text"
-                    id="inputAmount"
-                    name="amount"
-                    placeholder="0"
-                  />
-                </div>
-              </div>
-              <div class="row">
-                <div class="col row-cols-1">
-                  <label for="type">Tipo</label>
-                  <select name="type" id="typeSelect">
-                    <option value="debt">Gasto</option>
-                    <option value="credit">Ganancia</option>
-                  </select>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col row-cols-1">
-                  <label for="category">Categoría</label>
-                  <select name="category" id="categorySelect"></select>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col row-cols-1">
-                  <label for="date">Fecha</label>
-                  <input type="date" id="transactionDate" />
-                </div>
-              </div>
-              <div class="row justify-content-end">
-                <div class="col-5 g-4">
-                  <button type="submit" id="btnCancelNewTransaction">
-                    Cancelar
-                  </button>
-                  <button type="submit" id="btnAddTransaction">Agregar</button>
-                </div>
-              </div>
-              <div>
-                <ul id="transactions"></ul>
-              </div>
-            </form>
-          </div>
+            </div>
+            <div>
+              <ul id="transactions"></ul>
+            </div>
+          </form>
         </div>
       </div>
-    </main>
+    </section>
     <script src="../assets/js/new-transaction.js"></script>
     <!-- <script src="../assets/js/jsteste.js"></script> -->
     <script src="../assets/js/bootstrap.min.js"></script>
