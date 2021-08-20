@@ -52,7 +52,7 @@ const createNewCategory = (inputValue) => {
   col1.setAttribute("class", "col-12 col-md-6 col-lg-8 align-self-md-end mb-2");
 
   const newCategory = document.createElement("span");
-  newCategory.innerText = inputValue;
+  newCategory.innerText = inputValue.toLowerCase();
   newCategory.setAttribute("class", "bg-success px-lg-3 py-1");
 
   const col2 = createDiv();
@@ -71,8 +71,6 @@ const createNewCategory = (inputValue) => {
   categories.appendChild(newList);
 
   clearInputCategory();
-  //   createEditCategoryBtn(newCategory);
-  //   createDeleteCategoryBtn(newCategory);
   saveCategories();
 };
 
