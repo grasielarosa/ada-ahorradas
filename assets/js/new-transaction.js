@@ -1,11 +1,5 @@
 const form = document.getElementById("formTransaction");
 
-const inputTransactionDescription = document.getElementById("inputTransaction");
-const amount = document.getElementById("inputAmount");
-const transactionSelect = document.getElementById("typeSelect");
-const categorySelect = document.getElementById("categorySelect");
-const transactionDate = document.getElementById("transactionDate");
-
 const btnCancelNewTransaction = document.getElementById(
   "btnCancelNewTransaction"
 );
@@ -13,53 +7,95 @@ const btnNewTransaction = document.getElementById("btnAddTransaction");
 
 const transactions = document.getElementById("transactions");
 
-// ***************** ***************** *****************
-// ***************** suport functions *****************
-// ***************** ***************** *****************
+// ***************** category input *****************
 
-// ***************** create list *****************
+const categoriesInput = () => {
+  const categories = localStorage.getItem("categories");
+  const categoryList = JSON.parse(categories);
+  const categorySelect = document.getElementById("categorySelect");
 
-const createList = () => {
-  return document.createElement("li");
+  for (let category of categoryList) {
+    const option = document.createElement("option");
+    option.innerText = category.toLowerCase();
+    option.value = category;
+    categorySelect.appendChild(option);
+  }
 };
 
 // ***************** clear input *****************
-const clearInputTransaction = () => {
+const clearInput = () => {
+  const inputTransactionDescription =
+    document.getElementById("inputTransaction");
+  const amount = document.getElementById("inputAmount");
+  const transactionDate = document.getElementById("transactionDate");
+
   inputTransactionDescription.value = "";
   inputTransactionDescription.focus();
+  amount.value = "";
+  amount.focus();
+  transactionDate.value = new Date();
+  transactionDate.focus();
 };
 
-// ***************** ***************** ***************** *****************
-// *************** main functions - create new transaction ***************
-// ***************** ***************** ***************** *****************
-const showNewTransaction = (descriptionValue) => {
-  const newTransaction = createList();
-  newTransaction.innerText = descriptionValue;
-  transactions.appendChild(newTransaction);
+// ***************** create object *****************
 
-  clearInputTransaction();
-  // createEditCategoryBtn(newCategory);
-  // createDeleteCategoryBtn(newCategory);
-  // saveCategories();
+let transactionArray = [];
+
+const createTransactionObject = (
+  //id,
+  inputTransactionDescription,
+  amount,
+  transactionSelect,
+  categorySelect,
+  transactionDate
+) => {
+  const transactionObject = {
+    //id: id,
+    description: inputTransactionDescription,
+    amount: amount,
+    transaction: transactionSelect,
+    category: categorySelect,
+    transactionDate,
+  };
+  transactionArray.push(transactionObject);
+  console.log(transactionArray);
 };
 
-// const createObjTransaction = () => {
-//     return {
-//         //atributos
-//         form: document.querySelector(form),
-//         description: String,
-//         amount: Number,
-//         transaction: String,
-//         category: String,
-//         dateTransaction: Date,
+// ***************** create new transaction *****************
+const createNewTransaction = (e) => {
+  e.preventDefault();
+  const inputTransactionDescription = document
+    .getElementById("inputTransaction")
+    .value.toLowerCase();
+  const amount = document.getElementById("inputAmount").value.toLowerCase();
+  const transactionSelect = document
+    .getElementById("typeSelect")
+    .value.toLowerCase();
+  const categorySelect = document
+    .getElementById("categorySelect")
+    .value.toLowerCase();
+  const transactionDate = document
+    .getElementById("transactionDate")
+    .value.toLowerCase();
 
-//         //metodos
-
-//     }
-// }
+  createTransactionObject(
+    inputTransactionDescription,
+    amount,
+    transactionSelect,
+    categorySelect,
+    transactionDate
+  );
+  saveTransactions();
+  clearInput();
+};
 
 // ***************** event with click *****************
-btnNewTransaction.addEventListener("click", function () {
-  if (!inputTransactionDescription.value) return;
-  showNewTransaction(inputTransactionDescription.value);
-});
+btnNewTransaction.addEventListener("click", createNewTransaction);
+
+// ***************** LocalStorage *****************
+const saveTransactions = () => {
+  const transactionsJSON = JSON.stringify(transactionArray);
+  localStorage.setItem("transactions", transactionsJSON);
+};
+
+categoriesInput();

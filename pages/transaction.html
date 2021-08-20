@@ -108,7 +108,7 @@
                 placeholder="Descripción"
               />
               <label class="ps-3 form-label" for="transaction-name"
-                >Descripción</label
+                >descripción</label
               >
             </div>
             <div class="form-floating mb-3 col-12">
@@ -119,15 +119,15 @@
                 name="amount"
                 placeholder="0"
               />
-              <label class="ps-3 form-label" for="amount">Monto</label>
+              <label class="ps-3 form-label" for="amount">monto</label>
             </div>
 
             <div class="form-floating mb-3 col-12">
               <select class="form-select" name="type" id="typeSelect">
-                <option value="debt">Gasto</option>
-                <option value="credit">Ganancia</option>
+                <option value="debt">gasto</option>
+                <option value="credit">ganancia</option>
               </select>
-              <label class="ps-3 form-label" for="type">Tipo</label>
+              <label class="ps-3 form-label" for="type">tipo</label>
             </div>
 
             <div class="form-floating mb-3 col-12">
@@ -136,23 +136,18 @@
                 name="category"
                 id="categorySelect"
               ></select>
-              <label class="form-label" for="category">Categoría</label>
+              <label class="form-label" id="categorySelect" for="category"
+                >categoría</label
+              >
             </div>
 
             <div class="form-floating mb-3">
               <input class="form-control" type="date" id="transactionDate" />
-              <label class="form-label" for="date">Fecha</label>
+              <label class="form-label" for="date">fecha</label>
             </div>
 
             <div class="row">
               <div class="offset-0 mt-3">
-                <button
-                  class="btn btn-secondary"
-                  type="submit"
-                  id="btnCancelNewTransaction"
-                >
-                  Cancelar
-                </button>
                 <button
                   class="btn btn-primary"
                   type="submit"
@@ -160,6 +155,12 @@
                 >
                   Agregar
                 </button>
+                <a
+                  href="./balance.html"
+                  class="btn btn-secondary"
+                  id="btnCancelNewTransaction"
+                  >Cancelar</a
+                >
               </div>
             </div>
             <div>
