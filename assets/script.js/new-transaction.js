@@ -20,7 +20,8 @@ const categoriesInput = () => {
     option.value = category;
     categorySelect.appendChild(option);
   }
-};
+}; 
+categoriesInput();
 
 // ***************** clear input *****************
 const clearInput = () => {
@@ -36,6 +37,7 @@ const clearInput = () => {
   transactionDate.value = new Date();
   transactionDate.focus();
 };
+
 
 // ***************** create object *****************
 
@@ -57,9 +59,11 @@ const createTransactionObject = (
     category: categorySelect,
     transactionDate,
   };
-  transactionArray.push(transactionObject);
-  console.log(transactionArray);
+  const storageTransaction = getStorage();
+  storageTransaction.transactions.push(transactionObject);
+  localStorage.setItem('ahorradas', JSON.stringify(storageTransaction));
 };
+
 
 // ***************** create new transaction *****************
 const createNewTransaction = (e) => {
@@ -97,5 +101,3 @@ const saveTransactions = () => {
   const transactionsJSON = JSON.stringify(transactionArray);
   localStorage.setItem("transactions", transactionsJSON);
 };
-
-categoriesInput();
