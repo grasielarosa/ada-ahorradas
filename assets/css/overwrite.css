@@ -1,64 +1,85 @@
-
-body{
-    height: 100vh;
+body {
+  height: 100vh;
 }
 
 .h1 {
-    margin: 0%;
-    font-size: 3rem;
+  margin: 0%;
+  font-size: 3rem;
 }
 .bg-primary {
-    background-color: #3F3D56 !important; 
+  background-color: #3f3d56 !important;
 }
 
 .bg-secondary {
-    background-color: #f0ebeb !important; 
+  background-color: #f0ebeb !important;
 }
 
 .bg-success {
-    background-color: #fad79e63  !important;
+  background-color: #fad79e63 !important;
 }
 
 .text-primary,
 h2,
 body,
-input {
-    color: #3F3D56 !important; 
+input,
+table,
+tr {
+  color: #3f3d56 !important;
 }
 
 .text-secondary {
-    color: #f0ebeb !important; 
+  color: #f0ebeb !important;
 }
 
-.btn {
-    height: 40px;
+.btn.btn-sm {
+  border: none;
 }
 .btn.btn-primary {
-    background-color: #3F3D56;
-    border: #3F3D56;
-    color: #f0ebeb !important
+  background-color: #3f3d56;
+  border: #3f3d56;
+  color: #f0ebeb !important;
+  height: 40px;
 }
-.btn.btn-primary:hover{
-    background-color: #010b40;
-    border: #3F3D56;
+.btn.btn-primary:hover {
+  background-color: #010b40;
+  border: #3f3d56;
 }
-.btn.btn-primary:active{
-    background-color: #3F3D56;
-    border: #3F3D56;
+.btn.btn-primary:active {
+  background-color: #3f3d56;
+  border: #3f3d56;
+}
+.btn.btn-secondary {
+  height: 40px;
+}
+.btn-outline-danger {
+  color: #010b40;
+}
+.btn-outline-danger:hover {
+  background-color: #7206146c;
+}
+.btn-outline-warning {
+  color: #010b40;
+}
+.btn-outline-warning:hover {
+  background-color: #bf920d54;
 }
 
 .img-balance {
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
-.fas{
-    font-size: 1rem;
-    color: #F5B44B;
+.fas {
+  font-size: 1rem;
+  color: #f5b44b;
 }
-.fa-hand-holding-usd{
-    font-size: 4rem;
-    margin: 10px;
-    
+.fa-hand-holding-usd {
+  font-size: 4rem;
+  margin: 10px;
+}
+
+.form-check-input:checked {
+    background-color: #3f3d56;
+    border-color: #010b40;
 }

@@ -30,7 +30,7 @@ const clearInputCategory = () => {
 const createEditCategoryBtn = () => {
   const btnEditCategory = document.createElement("button");
   btnEditCategory.innerText = "editar";
-  btnEditCategory.setAttribute("class", "btn edit-category");
+  btnEditCategory.setAttribute("class", "btn btn-sm btn-outline-warning edit-category");
   btnEditCategory.setAttribute("title", "click para editar esta categoría");
   return btnEditCategory;
 };
@@ -38,7 +38,7 @@ const createEditCategoryBtn = () => {
 const createDeleteCategoryBtn = () => {
   const btnDeleteCategory = document.createElement("button");
   btnDeleteCategory.innerText = "apagar";
-  btnDeleteCategory.setAttribute("class", "btn delete-category");
+  btnDeleteCategory.setAttribute("class", "btn btn-sm btn-outline-danger delete-category");
   btnDeleteCategory.setAttribute("title", "click para apagar esta categoría");
   return btnDeleteCategory;
 };
