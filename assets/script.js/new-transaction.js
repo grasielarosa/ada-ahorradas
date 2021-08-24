@@ -10,13 +10,12 @@ const transactions = document.getElementById("transactions");
 // ***************** category input *****************
 
 const categoriesInput = () => {
-  const categories = localStorage.getItem("categories");
-  const categoryList = JSON.parse(categories);
-  const categorySelect = document.getElementById("categorySelect");
+  	const storage = getStorage();
 
-  for (let category of categoryList) {
+  for (let category of storage.categories) {
+    const categorySelect = document.getElementById("categorySelect");
     const option = document.createElement("option");
-    option.innerText = category.toLowerCase();
+    option.innerText = category.name.toLowerCase();
     option.value = category;
     categorySelect.appendChild(option);
   }
@@ -89,15 +88,10 @@ const createNewTransaction = (e) => {
     categorySelect,
     transactionDate
   );
-  saveTransactions();
+
   clearInput();
 };
 
 // ***************** event with click *****************
 btnNewTransaction.addEventListener("click", createNewTransaction);
 
-// ***************** LocalStorage *****************
-const saveTransactions = () => {
-  const transactionsJSON = JSON.stringify(transactionArray);
-  localStorage.setItem("transactions", transactionsJSON);
-};

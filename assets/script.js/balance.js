@@ -19,19 +19,19 @@ const createDeleteTransactionBtn = () => {
 // ***************** FILTROS *****************
 // ***************** category select *****************
 
-const categoriesInput = () => {
-    const categories = localStorage.getItem("categories");
-    const categoryList = JSON.parse(categories);
+  const categoriesInput = () => {
+  	const storage = getStorage();
+
+  for (let category of storage.categories) {
     const categorySelect = document.getElementById("categoryFilterSelect");
-  
-    for (let category of categoryList) {
-      const option = document.createElement("option");
-      option.innerText = category.toLowerCase();
-      option.value = category;
-      categorySelect.appendChild(option);
-    }
-  };
-  categoriesInput();
+    const option = document.createElement("option");
+    option.innerText = category.name.toLowerCase();
+    option.value = category;
+    categorySelect.appendChild(option);
+  }
+}; 
+categoriesInput();
+
 
 // ***************** LocalStorage *****************
 
