@@ -23,7 +23,6 @@ const createDeleteTransactionBtn = () => {
   return btnDeleteTransaction;
 };
 
-// ***************** FILTROS *****************
 // ***************** category select *****************
 
 const categoriesInputBalance = () => {

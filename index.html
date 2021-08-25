@@ -137,11 +137,11 @@
                     />
                   </div>
                 </div>
-                <form class="">
+                <form id="filterForm" class="">
                   <div class="mb-2">
                     <label class="form-label" for="type">Tipo</label>
                     <select class="form-select" name="" id="selectType">
-                      <option value=""selected>todos</option>
+                      <option value="all"selected>todos</option>
                       <option value="debt">gasto</option>
                       <option value="credit">ganancia</option>
                     </select>
@@ -157,18 +157,18 @@
                   </div>
                   <div class="mt-2 mb-2">
                     <label class="form-label" for="type">Fecha</label>
-                    <input class="form-control" type="date" />
+                    <input class="form-control" type="date" id="dateFilterSelect" />
                   </div>
                   <div class="mt-2 mb-2">
                     <label class="form-label" for="type">Ordenar por</label>
-                    <select class="form-select" name="" id="selectOrdered">
+                    <select class="form-select" name="" id="selectSorted">
                       <option value="" selected>todas</option>
-                      <option value="">más reciente</option>
-                      <option value="">menos reciente</option>
-                      <option value="">mayor monto</option>
-                      <option value="">menor monto</option>
-                      <option value="">a/z</option>
-                      <option value="">z/a</option>
+                      <option value="lastTr">más reciente</option>
+                      <option value="firstTr">menos reciente</option>
+                      <option value="biggestTr">mayor monto</option>
+                      <option value="smallerTr">menor monto</option>
+                      <option value="aToZ">a/z</option>
+                      <option value="zToA">z/a</option>
                     </select>
                   </div>
                 </form>
@@ -223,6 +223,7 @@
  <script src="./assets/script/localStorage.js"></script>
  <script src="./assets/script/balance.js"></script>
  <script src="./assets/script/new-transaction.js"></script>
+ <script src="./assets/script/filter.js"></script>
     <script src="./assets/js/bootstrap.min.js"></script>
   </body>
 </html>
