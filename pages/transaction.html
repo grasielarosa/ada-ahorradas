@@ -23,7 +23,7 @@
         <div class="container">
           <div class="d-flex align-items-end">
             <i class="fas fa-hand-holding-usd me-4 mb-3"></i>
-            <a class="navbar-brand" href="./balance.html"><h1 class="h1">AhorrAdas</h1></a>
+            <a class="navbar-brand" href="./index.html"><h1 class="h1">AhorrAdas</h1></a>
           </div>
           <button
             class="navbar-toggler align-self-end mb-3"
@@ -49,7 +49,7 @@
               <li class="nav-item">
                 <a
                   class="nav-link d-flex justify-content-end"
-                  href="../pages/balance.html"
+                  href="../pages/index.html"
                 >
                   <i class="fas fa-chart-line me-2"></i>
                   <h5 class="fw-light text-secondary h6">Balance</h5></a
@@ -124,8 +124,8 @@
 
             <div class="form-floating mb-3 col-12">
               <select class="form-select" name="type" id="typeSelect">
-                <option value="debt">gasto</option>
-                <option value="credit">ganancia</option>
+                <option id="debtTransaction" value="debt">gasto</option>
+                <option id="creditTransaction" value="credit">ganancia</option>
               </select>
               <label class="ps-3 form-label" for="type">tipo</label>
             </div>
@@ -135,8 +135,9 @@
                 class="form-select"
                 name="category"
                 id="categorySelect"
+                data-select = "optionSelected"
               ></select>
-              <label class="form-label" id="categorySelect" for="category"
+              <label class="form-label" for="category"
                 >categoría</label
               >
             </div>
@@ -156,7 +157,7 @@
                   Agregar
                 </button>
                 <a
-                  href="./balance.html"
+                href="./index.html"
                   class="btn btn-secondary"
                   id="btnCancelNewTransaction"
                   >Cancelar</a

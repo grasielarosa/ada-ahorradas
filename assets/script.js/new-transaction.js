@@ -10,16 +10,16 @@ const transactions = document.getElementById("transactions");
 // ***************** category input *****************
 
 const categoriesInput = () => {
-  	const storage = getStorage();
-
+  const storage = getStorage();
+  const categoryOperation = document.getElementById("categorySelect");
   for (let category of storage.categories) {
-    const categorySelect = document.getElementById("categorySelect");
     const option = document.createElement("option");
     option.innerText = category.name.toLowerCase();
-    option.value = category;
-    categorySelect.appendChild(option);
+    option.value = category.name;
+    option.dataset.id = category.id;
+    categoryOperation.appendChild(option);
   }
-}; 
+};
 categoriesInput();
 
 // ***************** clear input *****************
@@ -37,13 +37,10 @@ const clearInput = () => {
   transactionDate.focus();
 };
 
-
 // ***************** create object *****************
 
-let transactionArray = [];
-
 const createTransactionObject = (
-  //id,
+  id,
   inputTransactionDescription,
   amount,
   transactionSelect,
@@ -51,7 +48,7 @@ const createTransactionObject = (
   transactionDate
 ) => {
   const transactionObject = {
-    //id: id,
+    id: id,
     description: inputTransactionDescription,
     amount: amount,
     transaction: transactionSelect,
@@ -60,28 +57,28 @@ const createTransactionObject = (
   };
   const storageTransaction = getStorage();
   storageTransaction.transactions.push(transactionObject);
-  localStorage.setItem('ahorradas', JSON.stringify(storageTransaction));
+  localStorage.setItem("ahorradas", JSON.stringify(storageTransaction));
 };
-
 
 // ***************** create new transaction *****************
 const createNewTransaction = (e) => {
+  const id = createID();
   e.preventDefault();
+  const form = e.target;
   const inputTransactionDescription = document
     .getElementById("inputTransaction")
     .value.toLowerCase();
-  const amount = document.getElementById("inputAmount").value.toLowerCase();
+  const amount = document.getElementById("inputAmount").value;
   const transactionSelect = document
     .getElementById("typeSelect")
     .value.toLowerCase();
-  const categorySelect = document
-    .getElementById("categorySelect")
-    .value.toLowerCase();
+  const categorySelect = document.getElementById("categorySelect").value;
   const transactionDate = document
     .getElementById("transactionDate")
     .value.toLowerCase();
 
   createTransactionObject(
+    id,
     inputTransactionDescription,
     amount,
     transactionSelect,
@@ -94,4 +91,3 @@ const createNewTransaction = (e) => {
 
 // ***************** event with click *****************
 btnNewTransaction.addEventListener("click", createNewTransaction);
-
