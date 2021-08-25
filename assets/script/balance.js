@@ -1,4 +1,5 @@
 const tBody = document.getElementById("tBody");
+
 // ***************** butons *****************
 const createEditTransactionBtn = () => {
   const btnEditTransaction = document.createElement("button");
@@ -52,7 +53,13 @@ const addSavedTransactions = () => {
       object;
 
     const tr = document.createElement("tr");
-    tr.setAttribute("class", "table");
+    if (transaction === "debt") {
+      tr.setAttribute("class", "table table-danger");
+    }
+    if (transaction === "credit") {
+      tr.setAttribute("class", "table table-success");
+    }
+
     tr.dataset.id = object.id;
 
     const descriptionTable = document.createElement("th");
@@ -95,6 +102,8 @@ document.addEventListener("click", function (e) {
     const id = li.getAttribute("data-id");
     li.remove();
     deleteTransaction(id);
+    balanceSummary();
+
     //! remover todas as operações
   }
   // if (el.classList.contains("edit-category")) {
@@ -105,5 +114,44 @@ document.addEventListener("click", function (e) {
   // }
 });
 
-addSavedTransactions();
-categoriesInputBalance();
+// ***************** Balance *****************
+
+const balanceSummary = () => {
+  const creditSummary = document.getElementById("creditBalance");
+  const debtSummary = document.getElementById("debtBalance");
+  const financialSummary = document.getElementById("totalBalance");
+  const storage = getStorage();
+
+  const credit = storage.transactions
+    .filter((obj) => obj.transaction === "credit")
+    .reduce((start, elemento) => {
+      return parseFloat((start + Number(elemento.amount)).toFixed(2));
+    }, 0);
+  const debt = storage.transactions
+    .filter((obj) => obj.transaction === "debt")
+    .reduce((start, elemento) => {
+      return parseFloat((start + Number(elemento.amount)).toFixed(2));
+    }, 0);
+
+  creditSummary.innerText = credit;
+  creditSummary.setAttribute("class", "text-success");
+  debtSummary.innerText = ` - ${debt}`;
+  debtSummary.setAttribute("class", "text-danger");
+  const total = parseFloat((credit - debt).toFixed(2));
+  if (total > 0) {
+    financialSummary.innerText = `${total}`;
+    financialSummary.setAttribute("class", "text-success");
+  }
+  if (total < 0) {
+    financialSummary.innerText = `${total}`;
+    financialSummary.setAttribute("class", "text-danger");
+  }
+};
+
+const init = () => {
+  addSavedTransactions();
+  categoriesInputBalance();
+  balanceSummary();
+};
+
+init();

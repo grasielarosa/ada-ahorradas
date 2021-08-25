@@ -30,7 +30,13 @@ tr {
 .text-secondary {
   color: #f0ebeb !important;
 }
+.text-success {
+  color: #367e5b !important;
+}
 
+.text-danger{
+  color: #720614 !important;
+}
 .btn.btn-sm {
   border: none;
 }
