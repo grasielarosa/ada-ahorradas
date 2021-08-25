@@ -4,13 +4,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AhorrAdas | Reportes</title>
+    <title>AhorrAdas | Categorías</title>
     <script
       src="https://kit.fontawesome.com/956736f2ee.js"
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="../assets/css/overwrite.css" />
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/css/overwrite.css" />
   </head>
   <body>
     <!-- 
@@ -23,7 +23,7 @@
         <div class="container">
           <div class="d-flex align-items-end">
             <i class="fas fa-hand-holding-usd me-4 mb-3"></i>
-            <a class="navbar-brand" href="../index.html"><h1 class="h1">AhorrAdas</h1></a>
+            <a class="navbar-brand" href="./index.html"><h1 class="h1">AhorrAdas</h1></a>
           </div>
           <button
             class="navbar-toggler align-self-end mb-3"
@@ -49,7 +49,7 @@
               <li class="nav-item">
                 <a
                   class="nav-link d-flex justify-content-end"
-                  href="../index.html"
+                  href="./index.html"
                 >
                   <i class="fas fa-chart-line me-2"></i>
                   <h5 class="fw-light text-secondary h6">Balance</h5></a
@@ -58,7 +58,7 @@
               <li class="nav-item">
                 <a
                   class="nav-link d-flex justify-content-end"
-                  href="../pages/categories.html"
+                  href="./categories.html"
                 >
                   <i class="fas fa-tag me-2"></i>
                   <h5 class="fw-light text-secondary h6">Categorías</h5>
@@ -67,7 +67,7 @@
               <li class="nav-item">
                 <a
                   class="nav-link d-flex justify-content-end"
-                  href="../pages/report.html"
+                  href="./report.html"
                 >
                   <i class="fas fa-chart-pie me-2"></i>
                   <h5 class="fw-light text-secondary h6">Reportes</h5>
@@ -80,25 +80,59 @@
     </header>
     <!-- 
         *************************** 
-            Main - Report
+            Main - Categories
         ***************************    
     -->
-    <main>
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-8">
-            <h1 style="color: black">Reportes</h1>
-            <div>
-              <img src="../assets/img/undraw_Projections_re_1mrh.svg" alt="" />
+    <section class="my-3">
+      <div class="container m-auto p-5">
+        <div
+          class="
+            row
+            bg-secondary
+            rounded
+            p-3
+            d-flex
+            justify-content-around
+            m-auto
+          "
+        >
+          <h1 class="text-primary h2 mb-5">Categorías</h1>
+
+          <label class="col-form-label ms-4 ps-3 fw-bold" for="category-name"
+            >Nombre</label
+          >
+
+          <div class="row justify-content-between">
+            <div class="col-12 col-md-8 col-lg-10">
+              <input
+                class="form-control"
+                type="text"
+                id="inputNameID"
+                name="category-name"
+                placeholder="digite aquí"
+              />
             </div>
-            <div>
-              <p>No hay operaciones para reportar.</p>
+            <div class="col-12 col-md-4 col-lg-2">
+              <button
+                class="btn btn-primary mt-4 mt-md-0"
+                type="submit"
+                id="btnNewCategory"
+              >
+                Agregar
+              </button>
+            </div>
+          </div>
+          <div class="row mt-5">
+            <div class="col">
+              <ul class="list-unstyled px-3" id="categoriesId"></ul>
             </div>
           </div>
         </div>
       </div>
-    </main>
-
-    <script src="../assets/js/bootstrap.min.js"></script>
+    </section>
+    <script src="./assets/script/helpers.js"></script>
+    <script src="./assets/script/localStorage.js"></script>
+    <script src="./assets/script/new-category.js"></script>
+    <script src="./assets/js/bootstrap.min.js"></script>
   </body>
 </html>

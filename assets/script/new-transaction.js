@@ -64,7 +64,6 @@ const createTransactionObject = (
 const createNewTransaction = (e) => {
   const id = createID();
   e.preventDefault();
-  const form = e.target;
   const inputTransactionDescription = document
     .getElementById("inputTransaction")
     .value.toLowerCase();
