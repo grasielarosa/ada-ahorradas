@@ -22,8 +22,8 @@
       <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container">
           <div class="d-flex align-items-end">
-            <i class="fas fa-hand-holding-usd me-4 mb-3"></i>
-            <a class="navbar-brand" href="./index.html"><h1 class="h1">AhorrAdas</h1></a>
+            <i class="fas fa-hand-holding-usd d-none d-sm-block me-md-4 mb-3"></i>
+            <a class="navbar-brand px-3 px-sm-0" href="./index.html"><h1 class="h1">AhorrAdas</h1></a>
           </div>
           <button
             class="navbar-toggler align-self-end mb-3"
@@ -80,96 +80,102 @@
     </header>
     <!-- 
         *************************** 
-            Main - Report
+           Report
         ***************************    
     -->
-    <section class="my-3">
-      <div class="container m-auto p-5">
+    <section class="my-3 py-2">
+      <div class="container m-auto p-md-5">
         <div
           class="
             row
             bg-secondary
             rounded
-            p-3
+            p-md-5
             d-flex
             justify-content-around
             m-auto
           "
         >
-          <h1 class="text-primary h2 mb-5">Reportes</h1>
+          <h1 class="text-primary h2 mt-2 mb-3 mb-lg-5">Reportes</h1>
           <div class="d-none">
             <img src="../assets/img/undraw_Projections_re_1mrh.svg" alt="" />
             <p>No hay operaciones para reportar.</p>
           </div>
-          <div>
+          <div >
             <h2 class="h4">Resumen</h2>
-            <table class="table table-borderless table-hover align-middle text-end mb-5">
-              <tbody id="tBodyReport">
-                <tr>
-                  <th class="fw-light text-start">Categoría con mayor ganancia</th>
-                  <th class="fw-light"><span class="bg-success px-lg-3 py-1">teste</span></th>
-                  <th class="fw-light text-success">teste</th>
-                </tr>
-                <tr>
-                  <th class="fw-light text-start">Categoría con mayor gasto</th>
-                  <th class="fw-light"><span class="bg-success px-lg-3 py-1">teste</span></th>
-                  <th class="fw-light text-danger">teste</th>
-                </tr>
-                <tr>
-                  <th class="fw-light text-start">Categoría con mayor balance</th>
-                  <th class="fw-light"><span class="bg-success px-lg-3 py-1">teste</span></th>
-                  <th class="fw-light">teste</th>
-                </tr>
-                <tr>
-                  <th class="fw-light text-start">Mes con mayor ganancia</th>
-                  <th class="fw-light">teste</th>
-                  <th class="fw-light text-success">teste</th>
-                </tr>
-                <tr>
-                  <th class="fw-light text-start">Mes con mayor gasto</th>
-                  <th class="fw-light">teste</th>
-                  <th class="fw-light text-danger">teste</th>
-                </tr>
-              </tbody>
-            </table>
+            <div class="table-responsive">
+              <table class="table table-borderless table-hover align-middle text-end mb-5">
+                <tbody id="tBodyReport">
+                  <tr>
+                    <th class="fw-light text-start">Categoría con mayor ganancia</th>
+                    <th class="fw-light"><span class="bg-success px-lg-3 py-1">teste</span></th>
+                    <th class="fw-light text-success">teste</th>
+                  </tr>
+                  <tr>
+                    <th class="fw-light text-start">Categoría con mayor gasto</th>
+                    <th class="fw-light"><span class="bg-success px-lg-3 py-1">teste</span></th>
+                    <th class="fw-light text-danger">teste</th>
+                  </tr>
+                  <tr>
+                    <th class="fw-light text-start">Categoría con mayor balance</th>
+                    <th class="fw-light"><span class="bg-success px-lg-3 py-1">teste</span></th>
+                    <th class="fw-light">teste</th>
+                  </tr>
+                  <tr>
+                    <th class="fw-light text-start">Mes con mayor ganancia</th>
+                    <th class="fw-light">teste</th>
+                    <th class="fw-light text-success">teste</th>
+                  </tr>
+                  <tr>
+                    <th class="fw-light text-start">Mes con mayor gasto</th>
+                    <th class="fw-light">teste</th>
+                    <th class="fw-light text-danger">teste</th>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
             <h2 class="h4">Totales por categorías</h2>
-            <table class="table table-borderless table-hover align-middle text-end mb-5">
-              <thead class="mt-5">
-                <tr>
-                  <th scope="col" class="fw-normal text-start">Categoria</th>
-                  <th scope="col" class="fw-normal">Ganancias</th>
-                  <th scope="col" class="fw-normal">Gastos</th>
-                  <th scope="col" class="fw-normal">Balance</th>
-                </tr>
-              </thead>
-              <tbody id="tBodyReport">
-                <tr>
-                  <th class="fw-light text-start"><span class="bg-success px-lg-3 py-1">teste</span></th>
-                  <th class="fw-light text-success">teste</th>
-                  <th class="fw-light text-danger">teste</th>
-                  <th class="fw-light">teste</th>
-                </tr>
-              </tbody>
-            </table>
+            <div class="table-responsive">
+              <table class="table table-borderless table-hover align-middle text-end mb-5">
+                <thead class="mt-5">
+                  <tr>
+                    <th scope="col" class="fw-normal text-start">Categoria</th>
+                    <th scope="col" class="fw-normal">Ganancias</th>
+                    <th scope="col" class="fw-normal">Gastos</th>
+                    <th scope="col" class="fw-normal">Balance</th>
+                  </tr>
+                </thead>
+                <tbody id="tBodyReport">
+                  <tr>
+                    <th class="fw-light text-start"><span class="bg-success px-lg-3 py-1">teste</span></th>
+                    <th class="fw-light text-success">teste</th>
+                    <th class="fw-light text-danger">teste</th>
+                    <th class="fw-light">teste</th>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
             <h2 class="h4">Totales por mes</h2>
-            <table class="table table-borderless table-hover align-middle text-end mb-5">
-              <thead class="mt-5">
-                <tr>
-                  <th scope="col" class="fw-normal text-start">Categoria</th>
-                  <th scope="col" class="fw-normal">Ganancias</th>
-                  <th scope="col" class="fw-normal">Gastos</th>
-                  <th scope="col" class="fw-normal">Balance</th>
-                </tr>
-              </thead>
-              <tbody id="tBodyReport">
-                <tr>
-                  <th class="fw-light text-start">teste</th>
-                  <th class="fw-light text-success">teste</th>
-                  <th class="fw-light text-danger">teste</th>
-                  <th class="fw-light">teste</th>
-                </tr>
-              </tbody>
-            </table>
+            <div class="table-responsive">
+              <table class="table table-borderless table-hover align-middle text-end mb-md-5">
+                <thead class="mt-5">
+                  <tr>
+                    <th scope="col" class="fw-normal text-start">Categoria</th>
+                    <th scope="col" class="fw-normal">Ganancias</th>
+                    <th scope="col" class="fw-normal">Gastos</th>
+                    <th scope="col" class="fw-normal">Balance</th>
+                  </tr>
+                </thead>
+                <tbody id="tBodyReport">
+                  <tr>
+                    <th class="fw-light text-start">teste</th>
+                    <th class="fw-light text-success">teste</th>
+                    <th class="fw-light text-danger">teste</th>
+                    <th class="fw-light">teste</th>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>
