@@ -44,10 +44,9 @@ const createTd = () => {
 };
 
 // ***************** LocalStorage *****************
-const addSavedTransactions = () => {
-  const transactionList = getStorage();
-
-  for (let object of transactionList.transactions) {
+const addSavedTransactions = (transactionData) => {
+  tBody.innerHTML = null;
+  for (let object of transactionData) {
     const { id, description, amount, transaction, category, transactionDate } =
       object;
 
@@ -148,9 +147,10 @@ const balanceSummary = () => {
 };
 
 const init = () => {
-  addSavedTransactions();
   categoriesInputBalance();
   balanceSummary();
+  const storage = getStorage();
+  addSavedTransactions(storage.transactions);
 };
 
 init();
