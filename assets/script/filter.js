@@ -1,5 +1,3 @@
-// ***************** Events *****************
-
 const filterForm = document.getElementById("filterForm");
 
 const typeFilter = (storage) => {
@@ -27,61 +25,43 @@ const dateFilter = (storage) => {
 
 // ***************** Sort *****************
 
-// sortedAmount = getStorage();
-// sortedAmount.transactions.sort((value1, value2) => {
-//   return value1.amount - value2.amount;
-// });
+const sortedDescriptionASC = (value1, value2) =>
+  value1.description < value2.description ? -1 : 1;
 
-// const sortedDescription = (value1, value2) => {
-//   if (value1.description > value2.description) {
-//     return 1;
-//   }
-//   if (value1.description < value2.description) {
-//     return -1;
-//   }
+const sortedDescriptionDES = (value1, value2) =>
+  value1.description > value2.description ? -1 : 1;
 
-//   return 0;
-// };
+const sortedDateASC = (value1, value2) =>
+  value1.transactionDate > value2.transactionDate ? -1 : 1;
 
-// const sortedDate = (value1, value2) => {
-//   if (value1.transactionDate > value2.transactionDate) {
-//     return 1;
-//   }
-//   if (value1.transactionDate < value2.transactionDate) {
-//     return -1;
-//   }
-//   return 0;
-// };
+const sortedDateDES = (value1, value2) =>
+  value1.transactionDate < value2.transactionDate ? -1 : 1;
 
-// const sortedFilter = (storage) => {
-//   const selectSorted = document.getElementById("selectSorted").value;
-//   console.log(selectSorted);
-//   switch (selectSorted) {
-// case "lastTr":
-//   return;
-//   break;
-// case "firstTr":
-//   return;
-//   break;
-// case "biggestTr":
-//   return;
-//   break;
-// case "smallerTr":
-//   return;
-//   break;
-//     case "aToZ":
-//       console.log(storage);
-//       storage.sort((value1, value2) => {
-//         return sortedDescription(value1, value2);
-//       });
-//       break;
-// case "zToA":
-//   return;
-//   break;
-// default:
-//   return;
-//   }
-// };
+const sortedAmountASC = (value1, value2) => value2.amount - value1.amount;
+
+const sortedAmountDES = (value1, value2) => value1.amount - value2.amount;
+
+const sortedFilter = (storage) => {
+  const selectSorted = document.getElementById("selectSorted").value;
+  switch (selectSorted) {
+    case "lastTr":
+      return storage.sort(sortedDateASC);
+    case "firstTr":
+      return storage.sort(sortedDateDES);
+    case "biggestTr":
+      return storage.sort(sortedAmountASC);
+    case "smallerTr":
+      return storage.sort(sortedAmountDES);
+    case "aToZ":
+      return storage.sort(sortedDescriptionASC);
+
+    case "zToA":
+      return storage.sort(sortedDescriptionDES);
+
+    default:
+      return;
+  }
+};
 
 // *****************
 const filter = () => {
@@ -91,7 +71,7 @@ const filter = () => {
   dataFiltered = typeFilter(dataFiltered);
   dataFiltered = categoryFilter(dataFiltered);
   dataFiltered = dateFilter(dataFiltered);
-  // dateFiltered = sortedFilter(dataFiltered);
+  dateFiltered = sortedFilter(dataFiltered);
   addSavedTransactions(dataFiltered);
 };
 // *****************
@@ -99,4 +79,3 @@ const filter = () => {
 // ***************** Events *****************
 
 filterForm.addEventListener("change", filter);
-//filterForm.addEventListener("change", sortedFilter);
