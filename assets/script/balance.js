@@ -2,7 +2,7 @@ const tBody = document.getElementById("tBody");
 
 // ***************** butons *****************
 const createEditTransactionBtn = () => {
-  const btnEditTransaction = document.createElement("button");
+  const btnEditTransaction = document.createElement("a");
   btnEditTransaction.innerText = "editar";
   btnEditTransaction.setAttribute("class", "btn btn-sm btn-outline-warning");
   btnEditTransaction.setAttribute("title", "click para editar esta operación");
@@ -73,6 +73,7 @@ const addSavedTransactions = (transactionData) => {
     const btnTable = createTd();
     const newDeleteTransactionBtn = createDeleteTransactionBtn();
     const newEditTransactionBtn = createEditTransactionBtn();
+    newEditTransactionBtn.href = `./edit-transactions.html?id=${object.id}&description=${object.description}&amount=${object.amount}&transaction=${object.transaction}&category=${object.category}&transactionDate=${object.transactionDate}`;
 
     tr.appendChild(descriptionTable);
     tr.appendChild(categoryTable);
@@ -104,12 +105,6 @@ document.addEventListener("click", function (e) {
 
     //! remover todas as operações
   }
-  // if (el.classList.contains("edit-category")) {
-  //   const li = el.parentElement.parentElement;
-  //   const id = li.getAttribute("data-id");
-  //   //! editar categoria
-  //   console.log(id);
-  // }
 });
 
 // ***************** Balance *****************
