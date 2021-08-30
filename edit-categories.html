@@ -96,43 +96,44 @@
             m-auto
           "
         >
-          <h1 class="text-primary h2 mb-5">Categorías</h1>
+          <h1 class="text-primary h2 mb-5">Editar Categoría</h1>
 
-          <label class="col-form-label ms-4 ps-3 fw-bold" for="category-name"
-            >Nombre</label
-          >
-
-          <div class="row justify-content-between">
-            <div class="col-12 col-md-8 col-lg-10">
+         <div class="row justify-content-between m-auto">
+            <div class="col-12 col-md-7 col-lg-8">
               <input
                 class="form-control"
                 type="text"
-                id="inputNameID"
-                name="category-name"
+                id="inputEditCategory"
                 placeholder="digite aquí"
               />
             </div>
-            <div class="col-12 col-md-4 col-lg-2">
+            <div class="col-12 col-md-5 col-lg-4">
               <button
                 class="btn btn-primary mt-4 mt-md-0"
                 type="submit"
-                id="btnNewCategory"
+                id="btnEditCategory"
               >
-                Agregar
+                editar
               </button>
+              <a
+              href="./index.html"
+                class="btn btn-primary mt-4 mt-md-0"
+                type="submit"
+                id="btnCancelEditing"
+              >
+                cancelar
+            </a>
             </div>
           </div>
-          <div class="row mt-5">
-            <div class="col">
-              <ul class="list-unstyled px-3" id="categoriesId"></ul>
-            </div>
-          </div>
+          
         </div>
+        
       </div>
     </section>
-    <script src="./assets/script/helpers.js"></script>
     <script src="./assets/script/localStorage.js"></script>
-    <script src="./assets/script/new-category.js"></script>
+    <script src="./assets/script/edit-categories.js"></script>
+    
+    <!-- <script src="./assets/script/new-category.js"></script> -->
     <script src="./assets/js/bootstrap.min.js"></script>
   </body>
 </html>
