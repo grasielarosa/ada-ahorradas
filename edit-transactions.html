@@ -98,10 +98,10 @@
         >
           <h1 class="text-primary h2 mb-5">Nueva Operación</h1>
 
-          <form id="formTransaction">
+          <form id="editFormTransaction">
             <div class="form-floating mb-3 col-12">
               <input
-                id="inputTransaction"
+                id="editInputTransaction"
                 name="transaction-name"
                 type="text"
                 class="form-control"
@@ -113,7 +113,7 @@
             </div>
             <div class="form-floating mb-3 col-12">
               <input
-                id="inputAmount"
+                id="editInputAmount"
                 class="form-control"
                 type="text"
                 name="amount"
@@ -123,9 +123,9 @@
             </div>
 
             <div class="form-floating mb-3 col-12">
-              <select class="form-select" name="type" id="typeSelect">
-                <option id="debtTransaction" value="debt">gasto</option>
-                <option id="creditTransaction" value="credit">ganancia</option>
+              <select class="form-select" name="type" id="editTypeSelect">
+                <option id="editDebtTransaction" value="debt">gasto</option>
+                <option id="editCreditTransaction" value="credit">ganancia</option>
               </select>
               <label class="ps-3 form-label" for="type">tipo</label>
             </div>
@@ -134,7 +134,7 @@
               <select
                 class="form-select"
                 name="category"
-                id="categorySelect"
+                id="editCategorySelect"
                 data-select = "optionSelected"
               ></select>
               <label class="form-label" for="category"
@@ -143,7 +143,7 @@
             </div>
 
             <div class="form-floating mb-3">
-              <input class="form-control" type="date" id="transactionDate" />
+              <input class="form-control" type="date" id="editTransactionDate" />
               <label class="form-label" for="date">fecha</label>
             </div>
 
@@ -152,27 +152,25 @@
                 <button
                   class="btn btn-primary"
                   type="submit"
-                  id="btnAddTransaction"
+                  id="btnEditTransaction"
                 >
                   Agregar
                 </button>
                 <a
-                href="./index.html"
+                href="../index.html"
                   class="btn btn-secondary"
-                  id="btnCancelNewTransaction"
+                  id="btnCancelEditTransaction"
                   >Cancelar</a
                 >
               </div>
             </div>
-            <div>
-              <ul id="transactions"></ul>
-            </div>
+
           </form>
         </div>
       </div>
     </section>
     <script src="./assets/script/localStorage.js"></script>
-    <script src="./assets/script/new-transaction.js"></script>
+    <script src="./assets/script/edit-transactions.js"></script>
     <script src="./assets/js/bootstrap.min.js"></script>
   </body>
 </html>
