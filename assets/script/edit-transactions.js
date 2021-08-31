@@ -1,3 +1,4 @@
+const editFormTransaction = document.getElementById("editFormTransaction");
 // ***************** category input *****************
 
 const categoriesInput = () => {
@@ -59,7 +60,15 @@ const editTransaction = (e) => {
     }
     localStorage.setItem("ahorradas", JSON.stringify(storage));
   }
-
-  window.location.href = "./index.html";
 };
-btnEditTransaction.addEventListener("click", editTransaction);
+
+editFormTransaction.addEventListener("submit", (e) => {
+  if (e.target.checkValidity() === false) {
+    e.preventDefault();
+    e.stopPropagation();
+    editFormTransaction.classList.add("was-validated");
+  } else if (e.target.checkValidity() === true) {
+    editTransaction(e);
+    window.location.href = "./index.html";
+  }
+});

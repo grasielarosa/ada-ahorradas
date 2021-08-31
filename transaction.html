@@ -98,32 +98,35 @@
         >
           <h1 class="text-primary h2 mb-5">Nueva Operación</h1>
 
-          <form id="formTransaction">
+          <form id="formTransaction" class="needs-validation" novalidate>
             <div class="form-floating mb-3 col-12">
               <input
+              required
                 id="inputTransaction"
                 name="transaction-name"
                 type="text"
                 class="form-control"
-                placeholder="Descripción"
               />
               <label class="ps-3 form-label" for="transaction-name"
                 >descripción</label
               >
+              <div class="invalid-feedback">declare la descripción de la operación</div>
             </div>
             <div class="form-floating mb-3 col-12">
               <input
+              required
                 id="inputAmount"
                 class="form-control"
-                type="text"
+                type="number"
                 name="amount"
-                placeholder="0"
+             
               />
               <label class="ps-3 form-label" for="amount">monto</label>
+              <div class="invalid-feedback">declare el monto de la operación</div>
             </div>
 
             <div class="form-floating mb-3 col-12">
-              <select class="form-select" name="type" id="typeSelect">
+              <select class="form-select" name="type" id="typeSelect" required>
                 <option id="debtTransaction" value="debt">gasto</option>
                 <option id="creditTransaction" value="credit">ganancia</option>
               </select>
@@ -132,6 +135,7 @@
 
             <div class="form-floating mb-3 col-12">
               <select
+              required
                 class="form-select"
                 name="category"
                 id="categorySelect"
@@ -140,11 +144,13 @@
               <label class="form-label" for="category"
                 >categoría</label
               >
+              
             </div>
 
             <div class="form-floating mb-3">
-              <input class="form-control" type="date" id="transactionDate" />
+              <input class="form-control" type="date" id="transactionDate" required/>
               <label class="form-label" for="date">fecha</label>
+              <div class="invalid-feedback">declare la fecha de la operación</div>
             </div>
 
             <div class="row">
@@ -164,14 +170,13 @@
                 >
               </div>
             </div>
-            <div>
-              <ul id="transactions"></ul>
-            </div>
+            
           </form>
         </div>
       </div>
     </section>
     <script src="./assets/script/localStorage.js"></script>
+    <script src="./assets/script/helpers.js"></script>
     <script src="./assets/script/new-transaction.js"></script>
     <script src="./assets/js/bootstrap.min.js"></script>
   </body>

@@ -1,4 +1,4 @@
-const form = document.getElementById("formTransaction");
+const forms = document.getElementById("formTransaction");
 
 const btnCancelNewTransaction = document.getElementById(
   "btnCancelNewTransaction"
@@ -89,4 +89,14 @@ const createNewTransaction = (e) => {
 };
 
 // ***************** event with click *****************
-btnNewTransaction.addEventListener("click", createNewTransaction);
+
+forms.addEventListener("submit", (e) => {
+  if (e.target.checkValidity() === false) {
+    e.preventDefault();
+    e.stopPropagation();
+    forms.classList.add("was-validated");
+  } else if (e.target.checkValidity() === true) {
+    createNewTransaction(e);
+    window.location.href = "./index.html";
+  }
+});
