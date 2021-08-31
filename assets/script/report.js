@@ -82,6 +82,7 @@ const dateReport = () => {
   });
 
   generateDateReport(dateReport);
+  dateResumen(dateReport);
 };
 
 const generateDateReport = (dateReport) => {
@@ -211,6 +212,66 @@ const generateSummaryCategory = (profit, expenses, income) => {
   thIncome.appendChild(spanIncome);
   incomeCat.appendChild(thIncome);
   incomeCat.appendChild(thBalance);
+};
+
+const dateResumen = (dateReport) => {
+  let valueCredit = 0;
+  let valueDebt = 0;
+  let profit = new Object();
+  let expenses = new Object();
+  for (let year of dateReport) {
+    for (let month in year) {
+      const monthName = getMonthName(month - 1);
+      const credit = year[month].credit;
+      const debt = year[month].debt;
+
+      if (credit > valueCredit) {
+        (valueCredit = credit),
+          (profit = {
+            category: monthName,
+            total: credit,
+          });
+      }
+      if (debt > valueDebt) {
+        (valueDebt = debt),
+          (expenses = {
+            category: monthName,
+            total: debt,
+          });
+      }
+    }
+  }
+  generateSummaryDate(profit, expenses);
+};
+
+const generateSummaryDate = (profit, expenses) => {
+  const profitMonth = document.getElementById("profitMonth");
+  const thCategory = document.createElement("th");
+  thCategory.setAttribute("class", "fw-light");
+  const spanProfit = document.createElement("span");
+  spanProfit.innerText = profit.category;
+  spanProfit.setAttribute("class", "bg-success px-lg-3 py-1");
+  const thCredit = document.createElement("th");
+  thCredit.innerText = profit.total;
+  thCredit.setAttribute("class", "fw-bold text-success");
+
+  const expensesMonth = document.getElementById("expensesMonth");
+  const thExpenses = document.createElement("th");
+  thExpenses.setAttribute("class", "fw-light");
+  const spanExpenses = document.createElement("span");
+  spanExpenses.innerText = expenses.category;
+  spanExpenses.setAttribute("class", "bg-success px-lg-3 py-1");
+  const thDebt = document.createElement("th");
+  thDebt.innerText = expenses.total;
+  thDebt.setAttribute("class", "fw-bold text-danger");
+
+  thCategory.appendChild(spanProfit);
+  profitMonth.appendChild(thCategory);
+  profitMonth.appendChild(thCredit);
+
+  thExpenses.appendChild(spanExpenses);
+  expensesMonth.appendChild(thExpenses);
+  expensesMonth.appendChild(thDebt);
 };
 
 const initReport = () => {
