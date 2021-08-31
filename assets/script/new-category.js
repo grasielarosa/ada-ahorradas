@@ -49,6 +49,7 @@ const createNewCategory = () => {
   for (const category of storage.categories) {
     const newList = createList();
     newList.dataset.id = category.id;
+    newList.dataset.name = category.name;
     const col1 = createDiv();
     col1.setAttribute(
       "class",
@@ -79,10 +80,14 @@ const createNewCategory = () => {
 };
 
 // ***************** delete function *****************
-const deleteCategory = (id) => {
+const deleteCategory = (id, name) => {
   const storage = getStorage();
-  const index = storage.categories.findIndex((el) => el.id === id);
-  storage.categories.splice(index, 1);
+  const filterCategories = storage.categories.filter((el) => el.id !== id);
+  const filterTransactions = storage.transactions.filter(
+    (el) => el.category !== name
+  );
+  storage.categories = filterCategories;
+  storage.transactions = filterTransactions;
   localStorage.setItem("ahorradas", JSON.stringify(storage));
 };
 
@@ -112,9 +117,10 @@ document.addEventListener("click", function (e) {
   if (el.classList.contains("delete-category")) {
     const li = el.parentElement.parentElement;
     const id = li.getAttribute("data-id");
+    const name = li.getAttribute("data-name");
+
     li.remove();
-    deleteCategory(id);
-    //! remover todas as operações
+    deleteCategory(id, name);
   }
   if (el.classList.contains("edit-category")) {
     const li = el.parentElement.parentElement;
